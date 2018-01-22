@@ -1,14 +1,14 @@
-var webpack = require("webpack");
-var path = require("path");
+const webpack = require("webpack");
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: "./src/index.html",
   filename: "index.html"
 });
 
-var parentDir = path.join(__dirname);
+const parentDir = path.join(__dirname);
 
-module.exports = {
+const config = {
   entry: [path.join(parentDir, "src/client/app/index.jsx")],
   module: {
     loaders: [
@@ -32,3 +32,5 @@ module.exports = {
     contentBase: "./dist"
   }
 };
+
+module.exports = config;
